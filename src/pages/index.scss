@@ -1,0 +1,132 @@
+@import "../../node_modules/bulma/sass/utilities/initial-variables";
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+$primary: #2B2D42;
+$primary-inverted: #8D99AE;
+$red: #D90429;
+$alink: #1abaae;
+$profile-bg: #f6f6f6;
+$progress-color: #23d160;
+$glitch-text: #000000;
+$family-serif: 'Open Sans', sans-serif;
+$primary: $primary;
+$primary-invert: $primary-inverted;
+$danger: $red;
+$family-primary: $family-serif;
+$tablet: 769px !default// 960px container + 4rem
+$desktop: 960px + (2 * $gap) !default// 1152px container + 4rem
+$widescreen: 1152px + (2 * $gap) !default// 1344px container + 4rem
+$fullhd: 1344px + (2 * $gap) !default@import "../../node_modules/bulma/bulma";
+@import "../../node_modules/font-awesome/css/font-awesome.css";
+
+.top-hero {
+  padding-bottom: 12px !important;
+  background: $profile-bg;
+}
+
+.nav-style {
+  box-shadow: none !important;
+}
+
+.link {
+  color: $alink !important;
+}
+
+.blog_container {
+  @media screen and (max-width: $tablet) {
+    height: inherit;
+    overflow: inherit;
+  }
+  @media screen and (min-width: $tablet) {
+    height: 100vh;
+    margin-right: 0;
+    overflow-y: scroll;
+  }
+}
+
+.glitch {
+  color: $glitch-text;
+  position: relative;
+  margin: 0 auto;
+}
+
+@keyframes glitch_anim {
+  $steps: 30;
+  @for $i from 0 through $steps {
+    #{percentage($i*(1/$steps))} {
+      clip: rect(random(100)+px, 9999px, random(100)+px, 0);
+    }
+  }
+}
+
+.glitch:after {
+  content: attr(data-text);
+  position: absolute;
+  left: 2px;
+  text-shadow: -1px 0 red;
+  top: 0;
+  color: $glitch-text;
+  background: $profile-bg;
+  overflow: hidden;
+  clip: rect(0, 900px, 0, 0);
+  animation: glitch_anim 2s infinite linear alternate-reverse;
+}
+
+@keyframes glitch_anim-2 {
+  $steps: 25;
+  @for $i from 0 through $steps {
+    #{percentage($i*(1/$steps))} {
+      clip: rect(random(100)+px, 9999px, random(100)+px, 0);
+    }
+  }
+}
+
+.glitch:before {
+  content: attr(data-text);
+  position: absolute;
+  left: -2px;
+  text-shadow: 1px 0 blue;
+  top: 0;
+  color: $glitch-text;
+  background: $profile-bg;
+  overflow: hidden;
+  clip: rect(0, 900px, 0, 0);
+  animation: glitch_anim-2 3s infinite linear alternate-reverse;
+}
+
+.navOverlay {
+  margin-left: 22px;
+  margin-right: 28px;
+  position: absolute;
+  width: 92%;
+  z-index: 999999;
+}
+
+progress {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 2.4px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-right: 5px;
+  border-radius: 150px;
+  transition: all 1200ms ease-in;
+  background-color: transparent;
+  color: $progress-color;
+  z-index: 999;
+}
+
+progress::-webkit-progress-bar {
+  background-color: transparent;
+}
+
+progress::-webkit-progress-value {
+  background-color: $progress-color;
+}
+
+progress::-moz-progress-bar {
+  background-color: $progress-color;
+}
