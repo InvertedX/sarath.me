@@ -70,7 +70,7 @@ class Home extends React.Component {
                 const {frontmatter} = node
                 const {tags, featuredImage, featuredImageUrl} = frontmatter
                 return (
-                    <Link className="column " to={node.frontmatter.path}>
+                    <div className="column "  >
                       <article className="media" style={{marginBottom: 25, marginTop: 25}}>
                         <div className="columns container">
                           <div className="column item is-two-fifths is-centered ">
@@ -99,7 +99,7 @@ class Home extends React.Component {
                           </div>
                         </div>
                       </article>
-                    </Link>
+                    </div>
                 )
               })}
             </div>

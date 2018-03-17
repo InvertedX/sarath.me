@@ -4,6 +4,18 @@ module.exports = {
     author: 'Sarath kumar',
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId : process.env.trackingCode,
+        // Puts tracking script in the head instead of the body
+        head: false,
+        // Setting this parameter is optional
+        anonymize: true,
+        // Setting this parameter is also optional
+        respectDNT: true,
+      },
+    },
     'gatsby-plugin-react-helmet',
     {
       resolve: `gatsby-source-filesystem`,
@@ -52,6 +64,33 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    `gatsby-plugin-sass`
+    `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: "Sarath.me",
+        short_name: "Sarath.me",
+        start_url: "/",
+        background_color: "#313131",
+        theme_color: "#000000",
+        display: "minimal-ui",
+        // icons: [
+        //   {
+        //     // Everything in /static will be copied to an equivalent
+        //     // directory in /public during development and build, so
+        //     // assuming your favicons are in /static/favicons,
+        //     // you can reference them here
+        //     src: `/favicons/android-chrome-192x192.png`,
+        //     sizes: `192x192`,
+        //     type: `image/png`,
+        //   },
+        //   {
+        //     src: `/favicons/android-chrome-512x512.png`,
+        //     sizes: `512x512`,
+        //     type: `image/png`,
+        //   },
+        // ],
+      },
+    },
   ],
 };
