@@ -51,11 +51,6 @@ class Home extends React.Component {
                         <a href="https://twitter.com/_sarath_kumar" className="icon  is-medium"><i
                             className="fa fa-twitter is-medium fa-lg"/>
                         </a>
-                        <a href="https://www.facebook.com/sarath.kumar.677" className="icon  is-medium"><i
-                            className="fa fa-facebook-f is-medium fa-lg"/></a>
-                        <a href="https://www.instagram.com/hyper.gazer/" className="icon  is-medium">
-                          <i className="fa fa-instagram fa-lg"/>
-                        </a>
                         <a href="https://github.com/InvertedX" className="icon  is-medium">
                           <i className="fa fa-github is-medium fa-lg"/>
                         </a>
